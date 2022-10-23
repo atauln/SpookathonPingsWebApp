@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Selection{% endblock %}
+
+{% block content %}
+<div class="row">
+    <h3 class="foreground" style="margin-left:auto; margin-right:auto; letter-spacing:5px">My name is...</h3>
+</div>
+<div class="row">
+    {% if 'name' not in session %}
+    <form method="POST">
+        <input name="text">
+        <input type="Submit">
+    </form>
+    {% else %}
+    <h1 class="green" style="margin-left:auto; margin-right:auto; letter-spacing:-1px; text-align:center">{{ session['name'] }}</h1>
+    {% endif %}
+</div>
+{% endblock %}
